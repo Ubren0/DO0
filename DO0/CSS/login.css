@@ -1,0 +1,126 @@
+
+/* Definições gerais */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2C786C, #4CB8A5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container do login */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2C786C;
+}
+
+/* Campos de entrada */
+.input-container {
+    position: relative;
+    margin: 15px 0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4CB8A5;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #2C786C;
+    box-shadow: 0 0 5px rgba(44, 120, 108, 0.5);
+}
+
+/* Botão de login */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #2C786C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #225F55;
+}
+
+/* Mensagem de erro */
+.mensagem {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Ícone de mostrar/ocultar senha */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #4CB8A5;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    color: #2C786C;
+}
+
+/* Lembrar-me */
+.remember-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.remember-container input {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Rodapé */
+.footer {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer a {
+    color: #2C786C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

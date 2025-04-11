@@ -1,0 +1,87 @@
+:root {
+    --bg-light: #f3f4f6;
+    --bg-dark: #1a1a1a;
+    --sidebar-light: #2C786C;
+    --sidebar-dark: #333;
+    --card-light: #fff;
+    --card-dark: #2c2c2c;
+    --text-light: #000;
+    --text-dark: #fff;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--sidebar-light);
+    color: white;
+    position: fixed;
+    padding: 20px;
+}
+.sidebar h2 {
+    text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 12px;
+    margin: 10px 0;
+    background: #225F55;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.sidebar ul li:hover {
+    background: #1C4E45;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    width: 100%;
+}
+
+.card {
+    background: var(--card-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+
+.btn-atualizar, .btn-modo {
+    background: #2C786C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin: 10px 0;
+}
+.btn-atualizar:hover, .btn-modo:hover {
+    background: #1C4E45;
+}
+
+.dark-mode {
+    --bg-light: var(--bg-dark);
+    --sidebar-light: var(--sidebar-dark);
+    --card-light: var(--card-dark);
+    --text-light: var(--text-dark);
+}
