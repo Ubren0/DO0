@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="IMG/x-icon" href="../IMG/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Controle de Pragas</title>
+    <link rel="stylesheet" href="../css/clientes.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Controle de Pragas</h2>
+    <ul>
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li>🏢 Clientes</li>
+        <li onclick="window.location.href='Servico.html'">🛠 Serviços</li>
+        <li onclick="window.location.href='configuracoes.html'">⚙ Configurações</li>
+        <li onclick="logout()">🚪 Sair</li>
+    </ul>
+</div>
+<div class="content">
+    <h1>Clientes Cadastrados</h1>
+    <div class="card">
+        <h3>🏢 Lista de Clientes</h3>
+        <input type="text" id="searchClientes" placeholder="🔍 Buscar cliente..." onkeyup="filtrarClientes()">
+        <button class="btn" onclick="window.location.href='cadastroCliente.html'">➕ Adicionar Cliente</button>
+        <button class="btn" onclick="carregarClientes()">🔄 Atualizar</button>
+        <table border="1" width="100%" id="tabelaClientes">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>          
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

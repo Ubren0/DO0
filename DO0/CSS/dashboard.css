@@ -78,10 +78,38 @@ body {
 .btn-atualizar:hover, .btn-modo:hover {
     background: #1C4E45;
 }
+.submenu {
+    display: none;
+    list-style: none;
+    padding-left: 25px; /* Indenta um pouco mais */
+    margin-top: 5px;
+}
 
-.dark-mode {
-    --bg-light: var(--bg-dark);
-    --sidebar-light: var(--sidebar-dark);
-    --card-light: var(--card-dark);
-    --text-light: var(--text-dark);
+.submenu li {
+    background-color: transparent;
+    margin: 3px 0;
+    padding: 6px 10px;
+    font-size: 0.85em; /* Menor que o menu principal */
+    color: #d0d0d0;
+    cursor: pointer;
+    border-left: 2px solid #3fa67a;
+    transition: 0.2s;
+}
+
+.submenu li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.config-toggle {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.config-toggle span {
+    float: right;
+    font-size: 12px;
+    margin-right: 5px;
+    transition: transform 0.2s;
 }

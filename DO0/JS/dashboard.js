@@ -23,3 +23,17 @@ function alternarModo() {
 // Chamada automática ao carregar página
 mostrarUsuarios();
 mostrarClientes();
+// Função para exibir o submenu
+function toggleSubmenu() {
+    const submenu = document.getElementById("submenu");
+    const seta = document.getElementById("seta");
+
+    if (submenu.style.display === "block") {
+        submenu.style.display = "none";
+        seta.innerHTML = "▼";
+    } else {
+        submenu.style.display = "block";
+        seta.innerHTML = "▲";
+    }
+}
+

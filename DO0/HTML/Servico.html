@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="../IMG/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Serviço - Controle de Pragas</title>
+    <link rel="stylesheet" href="../CSS/Servico.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Controle de Pragas</h2>
+    <ul>
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
+        <li onclick="window.location.href='servico.html'">🛠 Serviços</li>
+        <li onclick="window.location.href='configuracoes.html'">⚙ Configurações</li>
+        <li onclick="logout()">🚪 Sair</li>
+    </ul>
+</div>
+<div class="content">
+    <h1>Agendamento de Serviço</h1>
+
+    <form id="agendamentoForm">
+        <label for="pesquisaCliente">Pesquisar Cliente:</label>
+        <input type="text" id="pesquisaCliente" placeholder="Digite o nome ou CNPJ/CPF do cliente" oninput="pesquisarCliente()">
+
+        <div id="clienteInfo">
+            <label>Nome do Cliente:</label>
+            <input type="text" id="nomeCliente" disabled>
+            <label>Endereço:</label>
+            <input type="text" id="enderecoCliente" disabled>
+        </div>
+
+        <label for="servico">Selecione o Serviço:</label>
+        <select id="servico">
+            <option value="desratizacao">Desratização</option>
+            <option value="dedetizacao">Dedetização</option>
+            <option value="desinsetizacao">Desinsetização</option>
+        </select>
+
+        <label for="dataAgendamento">Data do Agendamento:</label>
+        <input type="date" id="dataAgendamento">
+
+        <button type="button" onclick="agendarServico()">Agendar Serviço</button>
+    </form>
+</div>
+
+<div id="popupSucesso" class="popup">
+    <div class="popup-conteudo">
+        <p>✅ Serviço agendado com sucesso!</p>
+        <button onclick="fecharPopup()">OK</button>
+    </div>
+</div>
+
+<script src="../JS/servico.js"></script>
+</body>
+</html>

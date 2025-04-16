@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="../IMG/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Configurações - Controle de Pragas</title>
+    <link rel="stylesheet" href="../CSS/configuracao.css">
+</head>
+<body>
+<div class="sidebar">
+    <h2>Controle de Pragas</h2>
+    <ul>
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
+        <li onclick="window.location.href='servico.html'">🛠 Serviços</li>
+
+        <!-- Menu Configurações com Subtópicos -->
+        <li class="configuracoes" onclick="toggleSubmenu()">⚙ Configurações</li>
+        <ul class="submenu">
+            <li onclick="window.location.href='usuarios.html'">👤 Usuários</li>
+            <li onclick="window.location.href='config_servicos.html'">🛠 Configuração de Serviços</li>
+            <li onclick="window.location.href='tipos_itens.html'">📋 Tipos de Itens</li>
+            <li onclick="window.location.href='pesticidas_armadilhas.html'">🐀 Pesticidas/Armadilhas</li>
+        </ul>
+
+        <li onclick="logout()">🚪 Sair</li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Painel de Configurações</h1>
+    <!-- O conteúdo vai depender do subitem escolhido -->
+</div>
+
+<script src="../JS/configuracoes.js"></script>
+</body>
+</html>

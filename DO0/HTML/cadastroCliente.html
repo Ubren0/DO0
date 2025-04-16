@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="../IMG/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente - Controle de Pragas</title>
+    <link rel="stylesheet" href="../CSS/cadastroCliente.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Controle de Pragas</h2>
+    <ul>
+        <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+        <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
+        <li onclick="window.location.href='servicos.html'">🛠 Serviços</li>
+        <li onclick="window.location.href='configuracoes.html'">⚙ Configurações</li>
+        <li onclick="logout()">🚪 Sair</li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Cadastro de Cliente</h1>
+    <div class="card">
+        <h3>📝 Preencha os dados do Cliente</h3>
+        <form id="formCadastro">
+            <div class="input-group">
+                <label for="cnpjcpf">CNPJ/CPF *</label>
+                <input type="text" id="cnpjcpf" name="cnpjcpf" required>
+            </div>
+            <div class="input-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="input-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefone">
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <button type="submit" class="btn-salvar">💾 Salvar</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
