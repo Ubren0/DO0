@@ -15,6 +15,7 @@ body {
     display: flex;
 }
 
+/* Sidebar */
 .sidebar {
     width: 250px;
     background-color: var(--green-dark);
@@ -63,6 +64,7 @@ body {
     margin: 5px 0;
 }
 
+/* Conteúdo Principal */
 .content {
     margin-left: 270px;
     padding: 30px;
@@ -76,6 +78,7 @@ h1 {
     color: var(--green-dark);
 }
 
+/* Card */
 .card {
     background-color: var(--card-light);
     padding: 20px;
@@ -99,31 +102,44 @@ h1 {
     color: var(--green-accent);
 }
 
-/* Gráficos */
-
-.charts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 20px;
+/* Tabela de Usuários */
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.chart-container {
-    background: var(--card-light);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 300px;
+.tabela-usuarios th, .tabela-usuarios td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.chart-container canvas {
-    width: 100% !important;
-    height: auto !important;
+.tabela-usuarios th {
+    background-color: var(--green-dark);
+    color: white;
+}
+
+.tabela-usuarios tr:hover {
+    background-color: var(--green-light);
+}
+
+/* Botão de Cadastro */
+.btn-cadastro {
+    background-color: var(--green-dark);
+    color: rgb(254, 251, 251);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-cadastro:hover {
+    background-color: var(--green-accent);
 }
 
 /* Responsivo */
-
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
@@ -145,9 +161,5 @@ h1 {
     .content {
         margin-left: 0;
         padding: 15px;
-    }
-
-    .charts {
-        flex-direction: column;
     }
 }
