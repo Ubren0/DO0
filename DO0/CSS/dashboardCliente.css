@@ -88,3 +88,14 @@ input:focus, select:focus {
     border: 1px solid #2C786C;
     box-shadow: 0 0 8px rgba(44, 120, 108, 0.6);
 }
+.sidebar ul .submenu {
+    margin-left: 15px;
+    display: none; /* <-- Começa escondido */
+    margin-top: 10px;
+}
+
+.sidebar ul .submenu li {
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+}

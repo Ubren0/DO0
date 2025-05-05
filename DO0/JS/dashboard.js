@@ -24,55 +24,39 @@ function toggleSubmenu() {
         seta.innerHTML = "▲";
     }
 }
+window.addEventListener("DOMContentLoaded", () => {
+    const canvas = document.getElementById('graficoServicos');
+    if (!canvas) {
+        console.warn("Canvas do gráfico não encontrado!");
+        return;
+    }
 
-// Chamada ao carregar
-mostrarUsuarios();
-mostrarClientes();
-
-// Gráfico de Barras - Clientes x Usuários
-const barCtx = document.getElementById('barChart');
-new Chart(barCtx, {
-    type: 'bar',
-    data: {
-        labels: ['Clientes', 'Usuários'],
-        datasets: [{
-            label: 'Quantidade',
-            data: [12, 5],
-            backgroundColor: ['#2C786C', '#3FA67A'],
-            borderRadius: 6
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false }
+    const ctx = canvas.getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+            datasets: [{
+                label: 'Serviços Realizados',
+                data: [10, 20, 15, 25, 18, 22],
+                backgroundColor: 'rgba(34, 139, 34, 0.5)',
+                borderColor: 'rgba(34, 139, 34, 1)',
+                borderWidth: 1
+            }]
         },
-        scales: {
-            y: {
-                beginAtZero: true,
-                ticks: { stepSize: 1 }
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Serviços por Mês'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
-});
-
-// Gráfico de Pizza - Tipos de Serviço (simulação)
-const pieCtx = document.getElementById('pieChart');
-new Chart(pieCtx, {
-    type: 'pie',
-    data: {
-        labels: ['Desratização', 'Desinsetização', 'Descupinização'],
-        datasets: [{
-            data: [6, 3, 3],
-            backgroundColor: ['#3FA67A', '#5DBB96', '#2C786C'],
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'bottom'
-            }
-        }
-    }
+    });
 });

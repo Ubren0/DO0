@@ -72,3 +72,14 @@ body {
 .btn:hover {
     background: #1C4E45;
 }
+.sidebar ul .submenu {
+    margin-left: 15px;
+    display: none;
+    margin-top: 10px;
+}
+
+.sidebar ul .submenu li {
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+}

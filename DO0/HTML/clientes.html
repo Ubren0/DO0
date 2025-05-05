@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes - Controle de Pragas</title>
     <link rel="stylesheet" href="../css/clientes.css">
+    <script src="../js/clientes.js"></script>
 </head>
 <body>
 <div class="sidebar">
@@ -14,7 +15,15 @@
         <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
         <li>🏢 Clientes</li>
         <li onclick="window.location.href='Servico.html'">🛠 Serviços</li>
-        <li onclick="window.location.href='configuracoes.html'">⚙ Configurações</li>
+        <li onclick="toggleSubmenu()" class="config-toggle">
+            ⚙ Configurações <span id="seta">▼</span>
+        </li>
+        <ul class="submenu" id="submenu">
+            <li onclick="window.location.href='usuarios.html'">👤 Usuários</li>
+            <li onclick="window.location.href='config_servicos.html'">🛠 Configurar Serviços</li>
+            <li onclick="window.location.href='tipos_itens.html'">📋 Tipos de Itens</li>
+            <li onclick="window.location.href='pesticidas_armadilhas.html'">🐀 Pesticidas/Armadilhas</li>
+        </ul>
         <li onclick="logout()">🚪 Sair</li>
     </ul>
 </div>

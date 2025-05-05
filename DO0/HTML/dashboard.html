@@ -1,3 +1,4 @@
+<?php include 'conexao.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Controle de Pragas</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -17,8 +19,6 @@
             <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
             <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
             <li onclick="window.location.href='servico.html'">🛠 Serviços</li>
-
-            <!-- Configurações com submenu expansível -->
             <li onclick="toggleSubmenu()" class="config-toggle">
                 ⚙ Configurações <span id="seta">▼</span>
             </li>
@@ -28,23 +28,29 @@
                 <li onclick="window.location.href='tipos_itens.html'">📋 Tipos de Itens</li>
                 <li onclick="window.location.href='pesticidas_armadilhas.html'">🐀 Pesticidas/Armadilhas</li>
             </ul>
-
-            <li onclick="logout()">🚪 Sair</li>
+            <ul>
+                <li onclick="logout()">🚪 Sair</li>
+            </ul>
         </ul>
     </div>
 
-    </div>
     <div class="content">
         <h1>Bem-vindo ao Dashboard</h1>
+
         <div class="card">
             <h3>📊 Estatísticas</h3>
             <p><strong>Usuários Cadastrados:</strong> <span id="usuariosCount">0</span></p>
             <p><strong>Clientes Cadastrados:</strong> <span id="clientesCount">0</span></p>
         </div>
-    </div>
+
+        <div class="chart-container">
+            <h3>📈 Serviços por Mês</h3>
+            <canvas id="graficoServicos"></canvas>
+        </div>
 
 
-    <script src="../js/dashboard.js"></script>
+
+        <script src="../js/dashboard.js"></script>
 </body>
 
 </html>

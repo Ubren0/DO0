@@ -1,8 +1,9 @@
 :root {
-    --bg-dark: #f4f9f4;
+    --bg-dark: #f3f4f6;
     --text-dark: #1d2d2a;
     --green-dark: #2C786C;
-    --green-light: #3FA67A;
+    --green-medium: #225F55;
+    --green-hover: #1C4E45;
     --green-accent: #5DBB96;
     --card-light: #ffffff;
 }
@@ -42,13 +43,16 @@ body {
 
 .sidebar ul li {
     padding: 12px 16px;
+    margin: 10px 0;
+    background: var(--green-medium);
+    text-align: center;
     cursor: pointer;
     border-radius: 8px;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
 }
 
 .sidebar ul li:hover {
-    background-color: var(--green-accent);
+    background-color: var(--green-hover);
 }
 
 .sidebar ul .submenu {
@@ -80,8 +84,13 @@ h1 {
     background-color: var(--card-light);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 .card h3 {
@@ -99,6 +108,24 @@ h1 {
     color: var(--green-accent);
 }
 
+/* Botões */
+
+.btn {
+    background: var(--green-dark);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: var(--green-hover);
+}
+
 /* Gráficos */
 
 .charts {
@@ -112,7 +139,7 @@ h1 {
     background: var(--card-light);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     flex: 1;
     min-width: 300px;
 }
