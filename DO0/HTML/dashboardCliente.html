@@ -14,18 +14,22 @@
     <ul>
         <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
         <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
-        <li onclick="window.location.href='Servico.html'">🛠 Serviços</li>
+        <li onclick="window.location.href='servico.html'">🛠 Serviços</li>
+
+        <!-- Item com submenu -->
         <li onclick="toggleSubmenu()" class="config-toggle">
             ⚙ Configurações <span id="seta">▼</span>
         </li>
+
+        <!-- Submenu oculto/expansível -->
         <ul class="submenu" id="submenu">
             <li onclick="window.location.href='usuarios.html'">👤 Usuários</li>
-            <li onclick="window.location.href='config_servicos.html'">🛠 Configurar Serviços</li>
-            <li onclick="window.location.href='tipos_itens.html'">📋 Tipos de Itens</li>
-            <li onclick="window.location.href='pesticidas_armadilhas.html'">🐀 Pesticidas/Armadilhas</li>
         </ul>
-    </ul>
-        <li onclick="logout()">🚪 Sair</li>
+
+        <!-- Logout -->
+        <ul>
+            <li onclick="logout()">🚪 Sair</li>
+        </ul>
     </ul>
 </div>
 <div class="content">

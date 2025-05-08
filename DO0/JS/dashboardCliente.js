@@ -64,6 +64,14 @@ function habilitarEdicao() {
 function cancelarEdicao() {
     location.reload();
 }
+// Função para toggle do submenu
+function toggleSubmenu() {
+    const submenu = document.getElementById("submenu");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+
+    const seta = document.getElementById("seta");
+    seta.textContent = submenu.style.display === "block" ? "▲" : "▼";
+}
 
 // Função de logout
 function logout() {

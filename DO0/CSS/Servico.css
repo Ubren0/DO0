@@ -108,9 +108,10 @@ button:hover {
     margin-bottom: 20px;
     font-size: 18px;
 }
+
 .sidebar ul .submenu {
     margin-left: 15px;
-    display: none; /* <-- Começa escondido */
+    display: none; /* Submenu começa escondido */
     margin-top: 10px;
 }
 

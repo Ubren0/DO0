@@ -1,3 +1,4 @@
+/* === Variáveis Globais === */
 :root {
     --bg-dark: #f3f4f6;
     --text-dark: #1d2d2a;
@@ -8,6 +9,7 @@
     --card-light: #ffffff;
 }
 
+/* === Corpo da Página === */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,6 +18,7 @@ body {
     display: flex;
 }
 
+/* === Sidebar === */
 .sidebar {
     width: 250px;
     background-color: var(--green-dark);
@@ -23,16 +26,13 @@ body {
     height: 100vh;
     padding: 20px 15px;
     position: fixed;
-    left: 0;
-    top: 0;
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .sidebar ul {
@@ -55,6 +55,7 @@ body {
     background-color: var(--green-hover);
 }
 
+/* Submenu (inicialmente oculto) */
 .sidebar ul .submenu {
     margin-left: 15px;
     display: none;
@@ -67,6 +68,7 @@ body {
     margin: 5px 0;
 }
 
+/* === Conteúdo Principal === */
 .content {
     margin-left: 270px;
     padding: 30px;
@@ -76,10 +78,10 @@ body {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
     color: var(--green-dark);
 }
 
+/* === Cartões === */
 .card {
     background-color: var(--card-light);
     padding: 20px;
@@ -94,22 +96,15 @@ h1 {
 }
 
 .card h3 {
-    margin-top: 0;
     color: var(--green-dark);
 }
 
-.card p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
 .card span {
-    font-weight: bold;
     color: var(--green-accent);
+    font-weight: bold;
 }
 
-/* Botões */
-
+/* === Botões Padrão === */
 .btn {
     background: var(--green-dark);
     color: white;
@@ -126,8 +121,7 @@ h1 {
     background: var(--green-hover);
 }
 
-/* Gráficos */
-
+/* === Gráficos === */
 .charts {
     display: flex;
     flex-wrap: wrap;
@@ -149,8 +143,7 @@ h1 {
     height: auto !important;
 }
 
-/* Responsivo */
-
+/* === Responsividade === */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;

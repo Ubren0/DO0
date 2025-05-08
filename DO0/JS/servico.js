@@ -24,3 +24,18 @@ function pesquisarCliente() {
         document.getElementById("enderecoCliente").value = "";
     }
 }
+
+// Função para alternar a exibição do submenu
+function toggleSubmenu() {
+    const submenu = document.getElementById("submenu");
+    const seta = document.getElementById("seta");
+
+    // Alterna a visibilidade do submenu
+    if (submenu.style.display === "none" || submenu.style.display === "") {
+        submenu.style.display = "block";
+        seta.innerHTML = "▲"; // Mudando seta para cima
+    } else {
+        submenu.style.display = "none";
+        seta.innerHTML = "▼"; // Mudando seta para baixo
+    }
+}

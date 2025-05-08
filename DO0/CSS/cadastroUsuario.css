@@ -1,70 +1,129 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background: #e6f2ec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.1);
-    padding: 30px;
-  }
-  
-  .card-title {
-    font-size: 22px;
-    color: #2e7d32;
-    text-align: center;
-    margin-bottom: 25px;
-  }
-  
-  form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #444;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  
-  form button {
-    background-color: #2e7d32;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #27662a;
-  }
-  
-.logo {
+  font-family: 'Inter', sans-serif;
+  background: #e6f2ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.1);
+  padding: 30px;
+}
+
+.card-title {
+  font-size: 22px;
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+form button {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #27662a;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #27662a;
+}
+
+.sidebar ul .submenu {
+  display: none; /* Oculto por padrão */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-left: 15px; /* Indentação para diferenciar do menu principal */
+  padding-left: 10px;
+}
+
+.sidebar ul .submenu li {
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 5px 0;
+  padding: 10px 0;
+}
+
+.sidebar ul .submenu.show {
+  display: block;
+  opacity: 1;
+  max-height: 500px; /* Ajuste o tamanho máximo conforme necessário */
+}
+
+#submenu li:hover {
+  background-color: #3a8e47;
+}

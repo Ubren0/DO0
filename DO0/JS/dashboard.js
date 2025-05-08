@@ -1,17 +1,21 @@
+// Atualiza número de usuários cadastrados
 function mostrarUsuarios() {
     document.getElementById("usuariosCount").textContent = "5";
 }
 
+// Atualiza número de clientes cadastrados
 function mostrarClientes() {
     document.getElementById("clientesCount").textContent = "12";
 }
 
+// Função de logout (limpa sessões e redireciona)
 function logout() {
     localStorage.clear();
     sessionStorage.clear();
     window.location.href = "login.html";
 }
 
+// Alterna visibilidade do submenu de configurações
 function toggleSubmenu() {
     const submenu = document.getElementById("submenu");
     const seta = document.getElementById("seta");
@@ -24,7 +28,14 @@ function toggleSubmenu() {
         seta.innerHTML = "▲";
     }
 }
+
+// Executa quando a página for carregada
 window.addEventListener("DOMContentLoaded", () => {
+    // Atualiza estatísticas
+    mostrarUsuarios();
+    mostrarClientes();
+
+    // Geração do gráfico com Chart.js
     const canvas = document.getElementById('graficoServicos');
     if (!canvas) {
         console.warn("Canvas do gráfico não encontrado!");

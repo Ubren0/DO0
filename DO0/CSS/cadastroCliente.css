@@ -1,11 +1,14 @@
+/* Estilos gerais para o corpo da página */
 body {
     font-family: Arial, sans-serif;
     background: #f3f4f6;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: row;
 }
 
+/* Sidebar */
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -13,46 +16,76 @@ body {
     color: white;
     position: fixed;
     padding: 20px;
+    box-sizing: border-box;
 }
+
+/* Título da sidebar */
 .sidebar h2 {
     text-align: center;
+    margin-bottom: 20px;
 }
+
+/* Lista do menu */
 .sidebar ul {
     list-style: none;
     padding: 0;
 }
+
+/* Itens da sidebar */
 .sidebar ul li {
-    padding: 12px;
+    padding: 12px 20px;
     margin: 10px 0;
     background: #225F55;
     cursor: pointer;
     text-align: center;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background 0.2s, font-weight 0.2s;
 }
-.sidebar ul li:hover {
+
+/* Hover e item ativo */
+.sidebar ul li:hover,
+.sidebar ul li.active {
     background: #1C4E45;
+    font-weight: bold;
 }
 
+/* Submenu da sidebar (inicialmente escondido) */
+.sidebar ul .submenu {
+    margin-left: 15px;
+    /* Indentação para diferenciar do menu principal */
+    display: none;
+    /* Oculto por padrão */
+    margin-top: 10px;
+}
+
+/* Estilo dos itens do submenu */
+.sidebar ul .submenu li {
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fundo levemente transparente */
+    margin: 5px 0;
+}
+/* Conteúdo principal  */
 .content {
-    margin-left: 270px;
-    padding: 20px;
-    width: 100%;
-}
-
-.card {
-    background: white;
-    padding: 20px;
+    background: #fff;
+    padding: 50px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    transition: 0.3s;
-}
-.card:hover {
-    transform: scale(1.02);
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
 }
 
-.btn-salvar {
+
+/* Título dentro do cartão */
+.card h3 {
+    text-align: center;
+    color: #2C786C;
+    margin-bottom: 20px;
+}
+
+/* Botões padrão */
+.btn {
     background: #2C786C;
     color: white;
     padding: 10px 15px;
@@ -61,21 +94,65 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: 0.3s;
+    margin-right: 10px;
 }
-.btn-salvar:hover {
+
+.btn:hover {
     background: #1C4E45;
 }
 
-.input-group {
-    margin-bottom: 15px;
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
 }
-.input-group label {
-    display: block;
+
+form label {
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
-.input-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+
+form input {
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    width: 100%;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Botão de salvar */
+form button {
+    background: #2C786C;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #1C4E45;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
 }
