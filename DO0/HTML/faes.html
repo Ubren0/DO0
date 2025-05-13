@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerar FAES</title>
+  <link rel="stylesheet" href="../CSS/Faes.css">
+</head>
+<body>
+
+  <h2>Gerar Ficha FAES - Avaliação e Execução de Serviço</h2>
+
+  <form action="#" method="POST">
+    <fieldset>
+      <legend>Dados do Cliente</legend>
+      <input type="text" placeholder="Razão Social" name="razao_social" required>
+      <input type="text" placeholder="CNPJ" name="cnpj" required>
+      <input type="text" placeholder="Ramo de Atividade" name="ramo">
+      <input type="text" placeholder="Endereço Completo" name="endereco" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Caracterização do Local</legend>
+      <textarea name="descricao_area_interna" placeholder="Descrição da Área Interna"></textarea>
+      <input type="text" name="area_interna" placeholder="Área Interna (m²)">
+      <textarea name="descricao_area_externa" placeholder="Descrição da Área Externa"></textarea>
+      <input type="text" name="area_externa" placeholder="Área Externa (m²)">
+      <textarea name="caracteristicas_vicinais" placeholder="Características das áreas vizinhas (portuária, industrial...)"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Vetores e Pragas Encontradas</legend>
+      <label><input type="checkbox" name="vetores[]" value="Barata"> Barata</label>
+      <label><input type="checkbox" name="vetores[]" value="Formiga"> Formiga</label>
+      <label><input type="checkbox" name="vetores[]" value="Rato"> Rato</label>
+      <label><input type="checkbox" name="vetores[]" value="Mosca"> Mosca</label>
+      <label><input type="checkbox" name="vetores[]" value="Nenhum"> Nenhum</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Produtos a Serem Utilizados</legend>
+      <div class="row">
+        <input type="text" name="produto_nome[]" placeholder="Nome do Produto">
+        <input type="text" name="produto_quimico[]" placeholder="Grupo Químico">
+        <input type="text" name="produto_praga[]" placeholder="Praga Alvo">
+      </div>
+      <div class="row">
+        <input type="text" name="produto_concentracao[]" placeholder="Concentração de Uso">
+        <input type="text" name="produto_metodo[]" placeholder="Método de Aplicação">
+        <input type="text" name="produto_obs[]" placeholder="Observações">
+      </div>
+      <!-- Você pode adicionar JS futuramente para adicionar mais blocos de produtos -->
+    </fieldset>
+
+    <fieldset>
+      <legend>Responsáveis</legend>
+      <input type="text" name="avaliador_nome" placeholder="Responsável pela Avaliação">
+      <input type="text" name="tecnico_nome" placeholder="Responsável Técnico">
+      <input type="text" name="registro_tecnico" placeholder="CREA ou CRBio">
+      <input type="text" name="controlador_nome" placeholder="Controlador de Pragas">
+    </fieldset>
+
+    <fieldset>
+      <legend>Informações do Serviço</legend>
+      <input type="text" name="navio" placeholder="Navio (se aplicável)">
+      <input type="text" name="bandeira" placeholder="Bandeira">
+      <input type="text" name="imo" placeholder="IMO">
+      <input type="text" name="porto" placeholder="Porto de Atracação">
+    </fieldset>
+
+    <button type="submit">Salvar FAES</button>
+  </form>
+
+</body>
+</html>

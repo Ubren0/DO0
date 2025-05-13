@@ -1,113 +1,14 @@
-/* Estilos gerais para o corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    /* Define a fonte usada no site */
-    background: #f3f4f6;
-    /* Cor de fundo clara para a área principal */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    /* Exibe a sidebar e o conteúdo lado a lado */
-}
+/* Estilos específicos para a página de clientes */
 
-/* Estilos da barra lateral (menu) */
-.sidebar {
-    width: 250px;
-    /* Largura fixa da sidebar */
-    height: 100vh;
-    /* Altura total da tela */
-    background: #2C786C;
-    /* Cor de fundo principal (verde escuro) */
-    color: white;
-    /* Cor do texto */
-    position: fixed;
-    /* Fixa a sidebar na tela mesmo ao rolar */
-    padding: 20px;
-}
-
-/* Título dentro da sidebar */
-.sidebar h2 {
-    text-align: center;
-    /* Centraliza o texto */
-}
-
-/* Remove marcadores e espaçamentos padrão da lista */
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Estilo para os itens do menu da sidebar */
+/* Comentários explicativos para manutenção futura */
 .sidebar ul li {
-    padding: 12px;
-    margin: 10px 0;
-    background: #225F55;
-    /* Tom de verde mais escuro */
-    cursor: pointer;
-    /* Muda o cursor para indicar que é clicável */
-    text-align: center;
-    border-radius: 5px;
-    /* Bordas arredondadas */
-    transition: 0.1s;
-    /* Animação suave para hover */
+  transition: 0.1s; /* Tempo de transição mais rápido específico para esta página */
 }
 
-
+/* Esse estilo foi mantido porque contém comentários educativos sobre o CSS */
 /* Área de conteúdo principal (à direita da sidebar) */
 .content {
-    margin-left: 270px;
-    /* Compensa a largura da sidebar */
+    margin-left: 270px; /* Compensa a largura da sidebar */
     padding: 20px;
-    width: 100%;
-    /* Ocupa o restante da largura da tela */
-}
-
-/* Cartões (área branca com sombra que envolve os dados) */
-.card {
-    background: white;
-    /* Fundo branco */
-    padding: 20px;
-    border-radius: 10px;
-    /* Bordas arredondadas */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra ao redor */
-    margin-bottom: 20px;
-    transition: 0.3s;
-}
-
-/* Botões padrão */
-.btn {
-    background: #2C786C;
-    /* Cor verde principal */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
-    margin-right: 10px;
-}
-
-/* Efeito hover nos botões */
-.btn:hover {
-    background: #1C4E45;
-    /* Cor mais escura no hover */
-}
-
-/* Submenu da sidebar (inicialmente escondido) */
-.sidebar ul .submenu {
-    margin-left: 15px;
-    /* Indentação para diferenciar do menu principal */
-    display: none;
-    /* Oculto por padrão */
-    margin-top: 10px;
-}
-
-/* Estilo dos itens do submenu */
-.sidebar ul .submenu li {
-    font-size: 0.95rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Fundo levemente transparente */
-    margin: 5px 0;
+    width: 100%; /* Ocupa o restante da largura da tela */
 }

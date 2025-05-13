@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html class="wp-toolbar" lang="pt-BR">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Uplog &bull; Gerar Manifestos</title>
+    <script type="text/javascript">
+        addLoadEvent = function (func) { if (typeof jQuery !== 'undefined') jQuery(function () { func(); }); else if (typeof wpOnload !== 'function') { wpOnload = func; } else { var oldonload = wpOnload; wpOnload = function () { oldonload(); func(); } } };
+        var ajaxurl = '/wp-admin/admin-ajax.php',
+            pagenow = 'toplevel_page_manifestos',
+            typenow = '',
+            adminpage = 'toplevel_page_manifestos',
+            thousandsSeparator = '.',
+            decimalPoint = ',',
+            isRtl = 0;
+    </script>
+    <link rel='stylesheet'
+        href='https://coleta.uplogerp.com.br/wp-admin/load-styles.php?c=1&amp;dir=ltr&amp;load%5Bchunk_0%5D=dashicons,admin-bar,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets&amp;load%5Bchunk_1%5D=,site-icon,l10n,buttons,wp-auth-check&amp;ver=6.5.4'
+        type="text/css" media='all' />
+    <style type="text/css">
+        @media print {
+            #wpadminbar {
+                display: none;
+            }
+        }
+    </style>
+    <link rel='stylesheet' id='css_configuracao_tema_uplog-css'
+        href='https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/configuracao_tema_uplog_2.84.css?ver=6.5.4'
+        media='all' />
+    <link rel='stylesheet' id='css_sweetalert-css'
+        href='https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/sweetalert.css?ver=6.5.4'
+        media='all' />
+    <link rel='stylesheet' id='css_calendario-css'
+        href='https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/calendario.css?ver=6.5.4'
+        media='all' />
+    <link rel='stylesheet' id='css_leaflet-css'
+        href='https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/leaflet.css?ver=6.5.4' media='all' />
+    <style id='wp-emoji-styles-inline-css'>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <script>
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/coleta.uplogerp.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.4" } };
+        /*! This file is auto-generated */
+        !function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
+    </script>
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var userSettings = { "url": "\/", "uid": "5161", "time": "1747139552", "secure": "1" };/* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://coleta.uplogerp.com.br/wp-admin/load-scripts.php?c=1&amp;load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils&amp;ver=6.5.4'></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/jquery-3.7.1.min.js?ver=6.5.4"
+        id="jquery_min-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/jquery-ui.min.js?ver=6.5.4"
+        id="jquery_ui-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/sweetalert-dev.js?ver=6.5.4"
+        id="jquery_sweetalert-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/jquery.mask.min.js?ver=6.5.4"
+        id="jquery_mask-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/leaflet.js?ver=6.5.4"
+        id="jquery_leaflet-js"></script>
+    <script
+        src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/js/configuracao_sistema_2.84.js?ver=6.5.4"
+        id="jquary_configuracao_sistema-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/manifestos/js/manifestos_2.36.js?ver=6.5.4"
+        id="js_manifestos-js"></script>
+    <script src="https://coleta.uplogerp.com.br/downlog/uplog/manifestos/js/imprime_manifestos_2.36.js?ver=6.5.4"
+        id="js_imprime_manifestos-js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGB0T3Z46F"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-MGB0T3Z46F");
+    </script>
+    <link rel="shortcut icon"
+        href="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/favicon.png" />
+    <script
+        type="text/javascript">var _wpColorScheme = { "icons": { "base": "#a7aaad", "focus": "#72aee6", "current": "#fff" } };</script>
+    <link id="wp-admin-canonical" rel="canonical"
+        href="https://coleta.uplogerp.com.br/wp-admin/admin.php?page=manifestos" />
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, document.getElementById('wp-admin-canonical').href + window.location.hash);
+        }
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body
+    class="wp-admin wp-core-ui no-js toplevel_page_manifestos auto-fold admin-bar branch-6-5 version-6-5-4 admin-color-fresh locale-pt-br no-customize-support no-svg">
+    <script type="text/javascript">
+        document.body.className = document.body.className.replace('no-js', 'js');
+    </script>
+
+    <script>
+        (function () {
+            var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?' + cs + '(\\s+|$)');
+
+            request = true;
+
+            b[c] = b[c].replace(rcs, ' ');
+            // The customizer requires postMessage and CORS (if the site is cross domain).
+            b[c] += (window.postMessage && request ? ' ' : ' no-') + cs;
+        }());
+
+    </script>
+
+    <div id="wpwrap">
+
+        <div id="adminmenumain" role="navigation" aria-label="Menu principal">
+            <a href="#wpbody-content" class="screen-reader-shortcut">Pular para o conteúdo principal</a>
+            <a href="#wp-toolbar" class="screen-reader-shortcut">Pular para a barra de ferramentas</a>
+            <div id="adminmenuback"></div>
+            <div id="adminmenuwrap">
+                <ul id="adminmenu">
+
+
+                    <li class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last"
+                        id="menu-dashboard">
+                        <a href='index.php'
+                            class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-last"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-dashboard' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Painel</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Painel</li>
+                            <li class="wp-first-item"><a href='index.php' class="wp-first-item">Início</a></li>
+                            <li><a href='index.php?page=tickets_suporte'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Tickets
+                                    de Suporte</a></li>
+                            <li><a href='index.php?page=alertas_cliente'>Tickets de Suporte &#8211; Alertas</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true">
+                        <div class="separator"></div>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_rota"
+                        id="toplevel_page_rota"><a href='admin.php?page=rota'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_rota"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-location' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Rotas</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Rotas</li>
+                            <li class="wp-first-item"><a href='admin.php?page=rota' class="wp-first-item">Rotas</a></li>
+                            <li><a href='admin.php?page=rota_classificacao'>Classificação de Rotas</a></li>
+                            <li><a href='admin.php?page=coleta_agendada'>Agendamento de coletas</a></li>
+                            <li><a href='admin.php?page=indicador_desempenho'>Indicador de desempenho</a></li>
+                            <li><a href='admin.php?page=rotas_relatorio'>Relatório de rotas</a></li>
+                            <li><a href='admin.php?page=planejamento_diario'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Planejamento
+                                    diário</a></li>
+                            <li><a href='admin.php?page=planejamento_diario_ponto'>Planejamento diário &#8211; ponto</a>
+                            </li>
+                            <li><a href='admin.php?page=cerca_eletronica'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Cerca
+                                    eletrônica</a></li>
+                            <li><a href='admin.php?page=mapa_rastreio_frotas'>Mapa de rastreio de frotas</a></li>
+                            <li><a href='admin.php?page=mapa_rotas_executadas'>Mapa de rotas executadas</a></li>
+                            <li><a href='https://coleta.uplogerp.com.br/mapa-monitoramento'>Mapa de monitoramento ao
+                                    vivo</a></li>
+                            <li><a href='https://coleta.uplogerp.com.br/tela-monitoramento'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Tela
+                                    de monitoramento</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_aplicativo_lista_coletas"
+                        id="toplevel_page_aplicativo_lista_coletas"><a href='admin.php?page=aplicativo_lista_coletas'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_aplicativo_lista_coletas"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-tablet' aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>APP Coleta</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>APP Coleta</li>
+                            <li class="wp-first-item"><a href='admin.php?page=aplicativo_lista_coletas'
+                                    class="wp-first-item">Lista de coletas</a></li>
+                            <li><a href='admin.php?page=aplicativo_finalizar_rota'>Finalizar rota</a></li>
+                            <li><a href='admin.php?page=aplicativo_checklist'>Checklist </a></li>
+                            <li><a href='admin.php?page=aplicativo_motivo'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Motivos
+                                    de coleta</a></li>
+                            <li><a href='admin.php?page=rota_motivo_pausa'>Motivo de pausa</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_manifestos"
+                        id="toplevel_page_manifestos"><a href='admin.php?page=manifestos'
+                            class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_manifestos">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-welcome-widgets-menus'
+                                aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Manifestos</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Manifestos</li>
+                            <li class="wp-first-item current"><a href='admin.php?page=manifestos'
+                                    class="wp-first-item current" aria-current="page">Gerar Manifestos</a></li>
+                            <li><a href='admin.php?page=alterar_manifestos'>Alterar Manifestos</a></li>
+                            <li><a href='admin.php?page=buscar_manifestos'>Buscar Manifestos</a></li>
+                            <li><a href='admin.php?page=registrar_coletas'>Registrar Coletas</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_controle_contentor"
+                        id="toplevel_page_controle_contentor"><a href='admin.php?page=controle_contentor'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_controle_contentor"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-screenoptions' aria-hidden='true'>
+                                <br /></div>
+                            <div class='wp-menu-name'>Controle de Contentor</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Controle de Contentor</li>
+                            <li class="wp-first-item"><a href='admin.php?page=controle_contentor'
+                                    class="wp-first-item">Controle de contentor</a></li>
+                            <li><a href='admin.php?page=add_contentor'>Cadastro de contentor</a></li>
+                            <li><a href='admin.php?page=manejo_contentor'>Manejo de contentor</a></li>
+                            <li><a href='admin.php?page=contentor_cor'>Cadastro de Cores<span
+                                        style="width:100%;height:1px;background:#FFF;margin:7px 0px -3px 0px;display:block;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=cadastro_posto'>Cadastro de Postos</a></li>
+                            <li><a href='admin.php?page=cadastro_oficina'>Cadastro de Oficinas<span
+                                        style="width:100%;height:1px;background:#FFF;margin:7px 0px -3px 0px;display:block;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=relatorio_contentor'>Relatório de Contentor</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_boletim_medicao_manual"
+                        id="toplevel_page_boletim_medicao_manual"><a href='admin.php?page=boletim_medicao_manual'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_boletim_medicao_manual"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-analytics' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Boletim de Medição</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Boletim de Medição</li>
+                            <li class="wp-first-item"><a href='admin.php?page=boletim_medicao_manual'
+                                    class="wp-first-item">Gerar Medição Manual</a></li>
+                            <li><a href='admin.php?page=boletim_medicao_automatico'>Gerar Medição Automático</a></li>
+                            <li><a href='admin.php?page=boletim_medicao_avulso'>Gerar Medição Avulso</a></li>
+                            <li><a href='admin.php?page=boletim_medicao_refatorado'>Refatorar Medição</a></li>
+                            <li><a href='admin.php?page=busca_boletim_medicao'>Buscar Medição</a></li>
+                            <li><a href='admin.php?page=relatorio_boletim_medicao'>Relatório de Medição</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_nfe"
+                        id="toplevel_page_gerar_nfe"><a href='admin.php?page=gerar_nfe'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_nfe"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-media-code' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>NF-e</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>NF-e</li>
+                            <li class="wp-first-item"><a href='admin.php?page=gerar_nfe' class="wp-first-item">Gerar
+                                    NF-e</a></li>
+                            <li><a href='admin.php?page=importar_nfe'>Importar NF-e</a></li>
+                            <li><a href='admin.php?page=inutiliza_nfe'>Inutilizar NF-e</a></li>
+                            <li><a href='admin.php?page=buscar_nfe'>Buscar NF-e</a></li>
+                            <li><a href='admin.php?page=consultar_nfes_sefaz'>Consultar NF-e</a></li>
+                            <li><a href='admin.php?page=relatorio_nfes'>Relatório de NF-e</a></li>
+                            <li><a href='admin.php?page=produtos'><span
+                                        style="width:100%; height:1px; background:#FFF; margin:-3px 0px 7px 0px; display:block;"></span>Produtos</a>
+                            </li>
+                            <li><a href='admin.php?page=autorizacoes_nfe'>Autorizações</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_nfse_manual"
+                        id="toplevel_page_gerar_nfse_manual"><a href='admin.php?page=gerar_nfse_manual'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_nfse_manual"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-media-code' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>NFS-e</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>NFS-e</li>
+                            <li class="wp-first-item"><a href='admin.php?page=gerar_nfse_manual'
+                                    class="wp-first-item">Gerar NFS-e Manual</a></li>
+                            <li><a href='admin.php?page=gerar_nfse_automatico'>Gerar NFS-e Automático</a></li>
+                            <li><a href='admin.php?page=gerar_nfse_importada'>Importação de NFS-e</a></li>
+                            <li><a href='admin.php?page=busca_nfse'>Buscar NFS-e</a></li>
+                            <li><a href='admin.php?page=relatorio_nfse'>Relatório de NFS-e</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_boleto_manual"
+                        id="toplevel_page_gerar_boleto_manual"><a href='admin.php?page=gerar_boleto_manual'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_gerar_boleto_manual"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-admin-page' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Boleto</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Boleto</li>
+                            <li class="wp-first-item"><a href='admin.php?page=gerar_boleto_manual'
+                                    class="wp-first-item">Gerar Boleto Manual</a></li>
+                            <li><a href='admin.php?page=gerar_boleto_automatico'>Gerar Boleto automático</a></li>
+                            <li><a href='admin.php?page=gerar_boleto_avulso'>Boleto Avulso / Parcelamento</a></li>
+                            <li><a href='admin.php?page=arquivo_retorno'>Arquivo Retorno</a></li>
+                            <li><a href='admin.php?page=busca_boleto'>Buscar Boleto</a></li>
+                            <li><a href='admin.php?page=relatorio_boleto'>Relatório de Boleto</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_certificado_manual"
+                        id="toplevel_page_certificado_manual"><a href='admin.php?page=certificado_manual'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_certificado_manual"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-awards' aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Certificado</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Certificado</li>
+                            <li class="wp-first-item"><a href='admin.php?page=certificado_manual'
+                                    class="wp-first-item">Gerar Certificado Manual</a></li>
+                            <li><a href='admin.php?page=certificado_automatico'>Gerar Certificado Automático</a></li>
+                            <li><a href='admin.php?page=busca_certificado'>Buscar Certificado</a></li>
+                            <li><a href='admin.php?page=relatorio_certificado'>Relatório de Certificado</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_controle_financeiro"
+                        id="toplevel_page_controle_financeiro"><a href='admin.php?page=controle_financeiro'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_controle_financeiro"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-chart-area' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Controle Financeiro</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Controle Financeiro</li>
+                            <li class="wp-first-item"><a href='admin.php?page=controle_financeiro'
+                                    class="wp-first-item">Controle financeiro</a></li>
+                            <li><a href='admin.php?page=lancamento'>Lançamentos</a></li>
+                            <li><a href='admin.php?page=financeiro_categoria'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Categorias</a>
+                            </li>
+                            <li><a href='admin.php?page=financeiro_centro_custo'>Centro de custo</a></li>
+                            <li><a href='admin.php?page=financeiro_fornecedor'>Fornecedores</a></li>
+                            <li><a href='admin.php?page=financeiro_conta'>Contas bancárias</a></li>
+                            <li><a href='admin.php?page=financeiro_documento'>Tipo de documentos</a></li>
+                            <li><a href='admin.php?page=financeiro_planejamento_orcamentario'>Planejamento
+                                    Orçamentário</a></li>
+                            <li><a href='admin.php?page=financeiro_comissionamento'>Comissionamento</a></li>
+                            <li><a href='admin.php?page=importar_ofx'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Importar
+                                    OFX</a></li>
+                            <li><a href='admin.php?page=cadastro_compras'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Cadastro
+                                    de compras</a></li>
+                            <li><a href='admin.php?page=relatorio_gerencial'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Relatório
+                                    Gerencial</a></li>
+                            <li><a href='admin.php?page=relatorio_lancamentos'>Relatório de lançamentos</a></li>
+                            <li><a href='admin.php?page=relatorio_orcamentario'>Relatório Orçamentário</a></li>
+                            <li><a href='admin.php?page=relatorio_comissionamento'>Relatório de Comissionamento</a></li>
+                            <li><a href='admin.php?page=relatorio_titulos_recebidos'>Relatório de titulos recebidos</a>
+                            </li>
+                            <li><a href='admin.php?page=relatorio_integracao_contabil'>Relatório de integração
+                                    contábil</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_armazenamento_lote"
+                        id="toplevel_page_armazenamento_lote"><a href='admin.php?page=armazenamento_lote'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_armazenamento_lote"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-welcome-widgets-menus'
+                                aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Armazen. Temporário</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Armazen. Temporário</li>
+                            <li class="wp-first-item"><a href='admin.php?page=armazenamento_lote'
+                                    class="wp-first-item">Lotes de Armazenamento</a></li>
+                            <li><a href='admin.php?page=listagem_entrada'>Listagem de Entradas</a></li>
+                            <li><a href='admin.php?page=transferencia_residuos'>Transferência de Resíduos<span
+                                        style="display: block;height: 1px;background: #FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=mtr_destinacao'>Gerar MTR Complementar</a></li>
+                            <li><a href='admin.php?page=registrar_mtr'>Registrar Destinação<span
+                                        style="display: block;height: 1px;background: #FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=listagem_manifestos'>Listagem de Manifestos</a></li>
+                            <li><a href='admin.php?page=listagem_certificado'>Listagem de Certificado<span
+                                        style="display: block;height: 1px;background: #FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=relatorios_armazenamento'>Relatórios de Armazenamento</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_checklist"
+                        id="toplevel_page_checklist"><a href='admin.php?page=checklist'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_checklist"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-forms' aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Checklist</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Checklist</li>
+                            <li class="wp-first-item"><a href='admin.php?page=checklist'
+                                    class="wp-first-item">Checklist</a></li>
+                            <li><a href='admin.php?page=campo_inspecao'>Campos de Inspeção<span
+                                        style="display:block; height:1px; background:#FFF; margin-top:8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=checklist_relatorios'>Relatórios Checklist</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-not-current-submenu wp-menu-separator" aria-hidden="true">
+                        <div class="separator"></div>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" id="menu-users">
+                        <a href='users.php' class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-admin-users' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Usuários</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Usuários</li>
+                            <li class="wp-first-item"><a href='users.php' class="wp-first-item">Todos os usuários</a>
+                            </li>
+                            <li><a href='user-new.php'>Adicionar novo usuário</a></li>
+                            <li><a href='profile.php'>Perfil</a></li>
+                            <li><a href='users.php?page=relatorio_geradores'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0 7px 0;display:block;"></span>Relatório
+                                    de Geradores</a></li>
+                            <li><a href='users.php?page=relatorio_acao'><span
+                                        style="width:100%;height:1px;background:#FFF;margin:-3px 0px 7px 0px;display:block;"></span>Relatório
+                                    de Ações</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_unidades_classificacao"
+                        id="toplevel_page_unidades_classificacao"><a href='admin.php?page=unidades_classificacao'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_unidades_classificacao"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-trash' aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Configuração de Coleta</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Configuração de Coleta</li>
+                            <li class="wp-first-item"><a href='admin.php?page=unidades_classificacao'
+                                    class="wp-first-item">Unidades de Classificação</a></li>
+                            <li><a href='admin.php?page=unidades_coleta'>Unidades de Coleta</a></li>
+                            <li><a href='admin.php?page=unidades_medida'>Unidade de Medida</a></li>
+                            <li><a href='admin.php?page=unidades_contencao'>Unidade de Contenção</a></li>
+                            <li><a href='admin.php?page=unidades_tratamento'>Unidade de Tratamento</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_frota"
+                        id="toplevel_page_frota"><a href='admin.php?page=frota'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_frota"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-admin-network' aria-hidden='true'>
+                                <br /></div>
+                            <div class='wp-menu-name'>Controle de Frota</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Controle de Frota</li>
+                            <li class="wp-first-item"><a href='admin.php?page=frota' class="wp-first-item">Veículos<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=frota_tipo'>Tipo de Veículos</a></li>
+                            <li><a href='admin.php?page=frota_modelo'>Modelos de Veículos</a></li>
+                            <li><a href='admin.php?page=frota_marca'>Marcas de Veículos<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=tipo_combustivel'>Tipo de Combustível</a></li>
+                            <li><a href='admin.php?page=tanque_armazenamento'>Tanques de Armazenamento</a></li>
+                            <li><a href='admin.php?page=lista_pedido_abastecimento'>Pedidos de Abastecimento<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=abastecimento_tanque'>Abastecimento de Tanque</a></li>
+                            <li><a href='admin.php?page=abastecimento_veiculo'> Abastecimento de Veículo<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=checklist_impeditivo'>Checklist </a></li>
+                            <li><a href='admin.php?page=abastecimento_relatorios'>Relatórios de Abastecimentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_telemetria_device"
+                        id="toplevel_page_telemetria_device"><a href='admin.php?page=telemetria_device'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_telemetria_device"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-admin-site-alt3' aria-hidden='true'>
+                                <br /></div>
+                            <div class='wp-menu-name'>Controle de Dispositivos</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Controle de Dispositivos</li>
+                            <li class="wp-first-item"><a href='admin.php?page=telemetria_device'
+                                    class="wp-first-item">Telemetria<span
+                                        style="width:100%;height:1px;background:#FFF;margin:7px 0px -3px 0px;display:block;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=sensor_device'>Sensores de Volume</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_documentos"
+                        id="toplevel_page_documentos"><a href='admin.php?page=documentos'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_documentos"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-category' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Documentos</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Documentos</li>
+                            <li class="wp-first-item"><a href='admin.php?page=documentos'
+                                    class="wp-first-item">Documentos<span
+                                        style="display:block; height:1px; background:#FFF; margin-top:8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=documento_tipo'>Tipos de Documentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_area_atuacao"
+                        id="toplevel_page_area_atuacao"><a href='admin.php?page=area_atuacao'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_area_atuacao"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-admin-tools' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Configurações do Sistema</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Configurações do Sistema</li>
+                            <li class="wp-first-item"><a href='admin.php?page=area_atuacao' class="wp-first-item">Áreas
+                                    de atuação</a></li>
+                            <li><a href='admin.php?page=area_procedencia'>Áreas de procedência</a></li>
+                            <li><a href='admin.php?page=setor'>Setores</a></li>
+                            <li><a href='admin.php?page=regiao'>Regiões</a></li>
+                            <li><a href='admin.php?page=porte'>Porte<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=controle_feriados'>Feriados<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=cadastro_imposto'>Cadastro de impostos</a></li>
+                            <li><a href='admin.php?page=natureza_operacao'>Cadastro de nat. de operação</a></li>
+                            <li><a href='admin.php?page=tipo_tomador'>Cadastro de tipo de tomador</a></li>
+                            <li><a href='admin.php?page=cadastro_transportadora'>Cadastro de transportadora</a></li>
+                            <li><a href='admin.php?page=destinacao'>Cadastro de destinação</a></li>
+                            <li><a href='admin.php?page=desconto_acrescimo'>Cadastro de desconto/acréscimo<span
+                                        style="display:block;height:1px;background:#FFF;margin-top: 8px;"></span></a>
+                            </li>
+                            <li><a href='admin.php?page=franquia_modelo'>Configuração de franquia modelo</a></li>
+                            <li><a href='admin.php?page=faturamento_modelo'>Configuração de faturamentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_newsletter"
+                        id="toplevel_page_newsletter"><a href='admin.php?page=newsletter'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_newsletter"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-email-alt' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Newsletter</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Newsletter</li>
+                            <li class="wp-first-item"><a href='admin.php?page=newsletter'
+                                    class="wp-first-item">Newsletter</a></li>
+                            <li><a href='admin.php?page=enviar_newsletter'>Enviar Newsletter</a></li>
+                            <li><a href='admin.php?page=enviar_newsletter_lembrete'>Enviar Newsletter de Lembrete</a>
+                            </li>
+                            <li><a href='admin.php?page=enviar_newsletter_cobranca'>Enviar Newsletter de Cobrança</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="wp-not-current-submenu menu-top toplevel_page_listagem_videos"
+                        id="toplevel_page_listagem_videos">
+                        <a href='admin.php?page=listagem_videos'
+                            class="wp-not-current-submenu menu-top toplevel_page_listagem_videos">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-format-video' aria-hidden='true'><br />
+                            </div>
+                            <div class='wp-menu-name'>Vídeos de tutorial</div>
+                        </a>
+                    </li>
+                    <li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_nivel_acesso menu-top-last"
+                        id="toplevel_page_nivel_acesso"><a href='admin.php?page=nivel_acesso'
+                            class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_nivel_acesso menu-top-last"
+                            aria-haspopup="true">
+                            <div class="wp-menu-arrow">
+                                <div></div>
+                            </div>
+                            <div class='wp-menu-image dashicons-before dashicons-lock' aria-hidden='true'><br /></div>
+                            <div class='wp-menu-name'>Nível de Acesso</div>
+                        </a>
+                        <ul class='wp-submenu wp-submenu-wrap'>
+                            <li class='wp-submenu-head' aria-hidden='true'>Nível de Acesso</li>
+                            <li class="wp-first-item"><a href='admin.php?page=nivel_acesso' class="wp-first-item">Nível
+                                    de Acesso</a></li>
+                            <li><a href='admin.php?page=bloqueio_ip'>Bloqueio por IP</a></li>
+                        </ul>
+                    </li>
+                    <li id="collapse-menu" class="hide-if-no-js"><button type="button" id="collapse-button"
+                            aria-label="Recolher menu principal" aria-expanded="true"><span class="collapse-button-icon"
+                                aria-hidden="true"></span><span class="collapse-button-label">Recolher
+                                menu</span></button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="wpcontent">
+
+            <div id="wpadminbar" class="nojq nojs">
+                <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Barra de ferramentas">
+                    <ul role='menu' id='wp-admin-bar-root-default' class="ab-top-menu">
+                        <li id='wp-admin-bar-menu-toggle'><a class='ab-item' role="menuitem" href='#'><span
+                                    class="ab-icon" aria-hidden="true"></span><span
+                                    class="screen-reader-text">Menu</span></a></li>
+                        <li id='wp-admin-bar-description' class="description"><a class='ab-item' role="menuitem"
+                                href='https://coleta.uplogerp.com.br/wp-admin/'><img
+                                    src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/logo_uplog_1.0.png"
+                                    style="height:50px;margin-top:3px;" /></a></li>
+                        <li id='wp-admin-bar-description_logo' class="description">
+                            <div class="ab-item ab-empty-item" role="menuitem"><img
+                                    src="https://arquivos.aquariunsistemas.com/documentos/webservice/public_html/api/documentos/documento?link=Z314mqtla2pmfXCbqGdom6W5pd7TYJyZmq6z3uSgmJukvaqZ2Yewl62Gc6HqanKrfqySsuaibLGjtrbVo2NrbmeFbtTilqA="
+                                    style="height:48px;margin-top:5px;border-left: solid 2px #00a99d;padding-left:30px;" />
+                            </div>
+                        </li>
+                    </ul>
+                    <ul role='menu' id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu">
+                        <li id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' role="menuitem"
+                                aria-expanded="false" href='https://coleta.uplogerp.com.br/wp-admin/profile.php'>Olá,
+                                <span class="display-name">Breno</span><img alt=''
+                                    src='https://secure.gravatar.com/avatar/?s=26&#038;d=mm&#038;r=g'
+                                    srcset='https://secure.gravatar.com/avatar/?s=52&#038;d=mm&#038;r=g 2x'
+                                    class='avatar avatar-26 photo avatar-default' height='26' width='26' loading='lazy'
+                                    decoding='async' /></a>
+                            <div class="ab-sub-wrapper">
+                                <ul role='menu' aria-label='Olá, Breno' id='wp-admin-bar-user-actions'
+                                    class="ab-submenu">
+                                    <li id='wp-admin-bar-user-info'><a class='ab-item' role="menuitem"
+                                            href='https://coleta.uplogerp.com.br/wp-admin/profile.php'><img alt=''
+                                                src='https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=g'
+                                                srcset='https://secure.gravatar.com/avatar/?s=128&#038;d=mm&#038;r=g 2x'
+                                                class='avatar avatar-64 photo avatar-default' height='64' width='64'
+                                                loading='lazy' decoding='async' /><span
+                                                class='display-name'>Breno</span><span
+                                                class='username'>TESTE</span><span
+                                                class='display-name edit-profile'>Editar perfil</span></a></li>
+                                    <li id='wp-admin-bar-logout'><a class='ab-item' role="menuitem"
+                                            href='https://coleta.uplogerp.com.br/wp-login.php?action=logout&#038;_wpnonce=825fc5b523'>Sair</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li id='wp-admin-bar-suporte' class="suporte">
+                            <div class="ab-item ab-empty-item" role="menuitem">
+                                <div class="menu">
+                                    <a class="redes"
+                                        href="https://teams.microsoft.com/l/chat/0/0?users=suporte@aquariunsistemas.com"
+                                        target="_blank">
+                                        <img
+                                            src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/teams.png" />
+                                    </a>
+                                    <a class="redes" href="https://wa.me/553182313141" target="_blank">
+                                        <img
+                                            src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/whatsapp.png" />
+                                    </a>
+                                    <a class="redes" href="https://t.me/suporteaquariun" target="_blank">
+                                        <img
+                                            src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/telegram.png" />
+                                    </a>
+                                    <div class="dados"><b>TELEFONE :</b> (31) 9 8231-3141 </div>
+                                    <div class="dados"><b>E-MAIL :</b> suporte@aquariunsistemas.com</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li id='wp-admin-bar-central-ajuda' class="central-ajuda"><a class='ab-item' role="menuitem"
+                                href='https://cbsolucoes.zendesk.com/hc/pt-br' target='_blank'></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="wpbody" role="main">
+
+                <div id="wpbody-content">
+                    <div id="screen-meta" class="metabox-prefs">
+
+                        <div id="contextual-help-wrap" class="hidden no-sidebar" tabindex="-1"
+                            aria-label="Aba de ajuda contextual">
+                            <div id="contextual-help-back"></div>
+                            <div id="contextual-help-columns">
+                                <div class="contextual-help-tabs">
+                                    <ul>
+                                    </ul>
+                                </div>
+
+
+                                <div class="contextual-help-tabs-wrap">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="load ">
+                        <div class="fundo">
+                            <span class="box"></span>
+                            <span class="box"></span>
+                            <div class="code"></div>
+                            <span class="trigger">PROCESSANDO DADOS...</span>
+                        </div>
+                    </div>
+                    <div id="pagina_uplog">
+                        <div id="titulo_pagina_uplog">
+                            <b><i class="icon dashicons-welcome-widgets-menus"></i> GERAR MANIFESTOS</b>
+                        </div>
+                        <div id="conteudo_pagina_uplog">
+                            <div class="formulario" style="width:800px">
+                                <span>Selecione uma rota <span class="descricao">( * )</span><br />
+                                    <input type="text" name="termo" id="termo" class="input" value=""
+                                        style="width:70px;float:left;margin-right:-3px;" autocomplete="off"
+                                        placeholder="BUSCAR..." onkeyup="busca_select(this)" />
+                                    <select id="id_rota" class="select obg" style="width:338px;">
+                                        <option value="0"> --- </option>
+                                        <option value="12">ALEGRE</option>
+                                        <option value="15">ANCHIETA</option>
+                                        <option value="13">ARACRUZ</option>
+                                        <option value="10">CACHOEIRO DO ITAPEMIRIM</option>
+                                        <option value="1">CARIACICA</option>
+                                        <option value="7">COLATINA</option>
+                                        <option value="16">DOMINGOS MARTINS</option>
+                                        <option value="9">GUARAPARI</option>
+                                        <option value="8">LINHARES</option>
+                                        <option value="14">SANTA TERESA</option>
+                                        <option value="6">SÃO MATEUS </option>
+                                        <option value="2">SERRA</option>
+                                        <option value="5">SOLICITADOS</option>
+                                        <option value="17">TESTE</option>
+                                        <option value="11">VIANA</option>
+                                        <option value="4">VILA VELHA</option>
+                                        <option value="3">VITORIA</option>
+                                    </select>
+                                </span>
+                                <span>Selecione uma data <span class="descricao">( * )</span><br />
+                                    <input id="data" class="input datepicker obg" style="width:196px;"
+                                        value="13/05/2025" autocomplete="off" />
+                                </span>
+
+                                <span>
+                                    <button type="button" class="bnt_custom buscando" onclick="listar_clientes(this)"
+                                        style="margin-top:22px;float:right;">BUSCAR ROTA</button>
+                                </span>
+                                <div id="lista_manifestos"></div>
+                            </div>
+                            <div id="imprime_manifestos"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div><!-- wpbody-content -->
+                <div class="clear"></div>
+            </div><!-- wpbody -->
+            <div class="clear"></div>
+        </div><!-- wpcontent -->
+
+        <div id="wpfooter" role="contentinfo">
+            <p id="footer-left" class="alignleft">
+
+                <a href="http://aquariunsistemas.com.br/" title="Aquariun Sistemas" target="_blank" class="logo_rodape">
+                    <img src="https://coleta.uplogerp.com.br/downlog/uplog/cadastro_usuarios/css/imagens/logo_aquariun.png"
+                        border="0" />
+                </a>
+                <script id="ze-snippet"
+                    src="https://static.zdassets.com/ekr/snippet.js?key=8d35322f-6568-41a9-9c5b-b78b7a3c643d"> </script>
+            </p>
+            <p id="footer-upgrade" class="alignright">
+            </p>
+            <div class="clear"></div>
+        </div>
+        <div id="wp-auth-check-wrap" class="hidden">
+            <div id="wp-auth-check-bg"></div>
+            <div id="wp-auth-check">
+                <button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text">
+                        Fechar janela </span></button>
+                <div id="wp-auth-check-form" class="loading"
+                    data-src="https://coleta.uplogerp.com.br/wp-login.php?interim-login=1&#038;wp_lang=pt_BR"></div>
+                <div class="wp-auth-fallback">
+                    <p><b class="wp-auth-fallback-expired" tabindex="0">A sessão expirou</b></p>
+                    <p><a href="https://coleta.uplogerp.com.br/wp-login.php" target="_blank">Acesse novamente.</a>
+                        A página de login será aberta em uma nova janela. Depois de logar você pode fechá-la e voltar a
+                        esta página.</p>
+                </div>
+            </div>
+        </div>
+        <link rel='stylesheet' id='admin_manifestos-css'
+            href='https://coleta.uplogerp.com.br/downlog/uplog/manifestos/css/manifestos_2.36.css?ver=6.5.4'
+            media='all' />
+        <script type='text/javascript'
+            src='https://coleta.uplogerp.com.br/wp-admin/load-scripts.php?c=1&amp;load%5Bchunk_0%5D=hoverIntent,wp-polyfill-inert,regenerator-runtime,wp-polyfill,wp-hooks&amp;ver=6.5.4'></script>
+        <script src="https://coleta.uplogerp.com.br/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6"
+            id="wp-i18n-js"></script>
+        <script id="wp-i18n-js-after">
+            wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+        </script>
+        <script id="common-js-translations">
+            (function (domain, translations) {
+                var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+                localeData[""].domain = domain;
+                wp.i18n.setLocaleData(localeData, domain);
+            })("default", { "translation-revision-date": "2024-05-03 12:41:18+0000", "generator": "GlotPress\/4.0.1", "domain": "messages", "locale_data": { "messages": { "": { "domain": "messages", "plural-forms": "nplurals=2; plural=n > 1;", "lang": "pt_BR" }, "%1$s is deprecated since version %2$s with no alternative available.": ["%1$s est\u00e1 obsoleto desde a vers\u00e3o %2$s sem nenhuma alternativa dispon\u00edvel."], "%1$s is deprecated since version %2$s! Use %3$s instead.": ["%1$s est\u00e1 obsoleto desde a vers\u00e3o %2$s! Use %3$s em seu lugar."], "Expand Main menu": ["Expandir menu principal"], "Dismiss this notice.": ["Dispensar este aviso."], "You are about to permanently delete these items from your site.\nThis action cannot be undone.\n'Cancel' to stop, 'OK' to delete.": ["Voc\u00ea est\u00e1 prestes a excluir permanentemente estes itens do seu site.\nEsta a\u00e7\u00e3o n\u00e3o pode ser desfeita.\n'Cancelar' para parar, 'OK' para excluir."], "Collapse Main menu": ["Recolher menu principal"] } }, "comment": { "reference": "wp-admin\/js\/common.js" } });
+        </script>
+        <script src="https://coleta.uplogerp.com.br/wp-admin/js/common.min.js?ver=6.5.4" id="common-js"></script>
+        <script src="https://coleta.uplogerp.com.br/wp-includes/js/hoverintent-js.min.js?ver=2.2.1"
+            id="hoverintent-js-js"></script>
+        <script src="https://coleta.uplogerp.com.br/wp-includes/js/admin-bar.min.js?ver=6.5.4"
+            id="admin-bar-js"></script>
+        <script src="https://coleta.uplogerp.com.br/wp-admin/js/svg-painter.js?ver=6.5.4" id="svg-painter-js"></script>
+        <script id="heartbeat-js-extra">
+            var heartbeatSettings = { "nonce": "f8f0d2c4b7" };
+        </script>
+        <script src="https://coleta.uplogerp.com.br/wp-includes/js/heartbeat.min.js?ver=6.5.4"
+            id="heartbeat-js"></script>
+        <script id="wp-auth-check-js-translations">
+            (function (domain, translations) {
+                var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+                localeData[""].domain = domain;
+                wp.i18n.setLocaleData(localeData, domain);
+            })("default", { "translation-revision-date": "2024-05-28 12:52:40+0000", "generator": "GlotPress\/4.0.1", "domain": "messages", "locale_data": { "messages": { "": { "domain": "messages", "plural-forms": "nplurals=2; plural=n > 1;", "lang": "pt_BR" }, "Your session has expired. You can log in again from this page or go to the login page.": ["A sua sess\u00e3o expirou. Voc\u00ea pode fazer o login novamente aqui ou ir para a p\u00e1gina de login."] } }, "comment": { "reference": "wp-includes\/js\/wp-auth-check.js" } });
+        </script>
+        <script src="https://coleta.uplogerp.com.br/wp-includes/js/wp-auth-check.min.js?ver=6.5.4"
+            id="wp-auth-check-js"></script>
+
+        <div class="clear"></div>
+    </div><!-- wpwrap -->
+    <script type="text/javascript">if (typeof wpOnload === 'function') wpOnload();</script>
+</body>
+
+</html>

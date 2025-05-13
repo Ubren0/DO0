@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Ícone da aba -->
+    <link rel="icon" href="../IMG/logo.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração de Serviços</title>
+
+    <!-- CSS padrão do sistema -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- CSS específico para a tela de serviços -->
+    <link rel="stylesheet" href="../css/config_servicos.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Controle de Pragas</h2>
+        <ul>
+            <li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+            <li onclick="window.location.href='clientes.html'">🏢 Clientes</li>
+            <li onclick="window.location.href='servico.html'">🛠 Serviços</li>
+
+            <li onclick="toggleSubmenu()" class="config-toggle">
+                ⚙ Configurações <span id="seta">▼</span>
+            </li>
+            <ul class="submenu" id="submenu">
+                <li onclick="window.location.href='usuarios.html'">👤 Usuários</li>
+                <li onclick="window.location.href='confservico.html'">🛠️Configuração De Serviços</li>
+            </ul>
+
+            <ul>
+                <li onclick="logout()">🚪 Sair</li>
+            </ul>
+        </ul>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+        <h1>⚙ Configuração de Tipos de Serviço</h1>
+
+        <!-- Formulário -->
+        <div class="card">
+            <form id="formServico">
+                <div class="form-group">
+                    <label for="nomeServico">Nome do Serviço:</label>
+                    <input type="text" id="nomeServico" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricaoServico">Descrição:</label>
+                    <textarea id="descricaoServico" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoriaServico">Categoria:</label>
+                    <select id="categoriaServico">
+                        <option value="desinfeccao">Desinfecção</option>
+                        <option value="dedetizacao">Dedetização</option>
+                        <option value="controle">Controle de Pragas</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <button type="submit">Salvar Serviço</button>
+            </form>
+        </div>
+
+        <!-- Tabela -->
+        <div class="card">
+            <h3>📋 Serviços Cadastrados</h3>
+            <table id="tabelaServicos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas serão inseridas via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/configservicos.js"></script>
+</body>
+
+</html>

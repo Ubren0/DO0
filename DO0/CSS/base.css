@@ -1,92 +1,194 @@
-/* Estilos Comuns */
+/* === Variáveis Globais === */
 :root {
-    --bg-color: #f3f4f6;
-    --sidebar-bg: #2C786C;
-    --sidebar-text: white;
-    --button-bg: #2C786C;
-    --button-hover-bg: #1C4E45;
-    --card-bg: white;
-    --input-border: #ccc;
-    --input-focus-border: #2C786C;
+    /* Cores do tema */
+    --bg-dark: #f3f4f6;
+    --text-dark: #1d2d2a;
+    --green-dark: #2C786C;
+    --green-medium: #225F55;
+    --green-hover: #1C4E45;
+    --green-accent: #5DBB96;
+    --card-light: #ffffff;
 }
 
+/* === Reset e Configurações Básicas === */
 body {
-    font-family: Arial, sans-serif;
-    background: var(--bg-color);
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Arial, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     display: flex;
 }
 
+/* === Sidebar === */
 .sidebar {
     width: 250px;
+    background-color: var(--green-dark);
+    color: white;
     height: 100vh;
-    background: var(--sidebar-bg);
-    color: var(--sidebar-text);
-    padding: 20px;
+    padding: 20px 15px;
     position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar ul li {
-    padding: 12px;
+    padding: 12px 16px;
     margin: 10px 0;
-    background: #225F55;
-    cursor: pointer;
+    background: var(--green-medium);
     text-align: center;
-    border-radius: 5px;
-    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .sidebar ul li:hover {
-    background: var(--button-hover-bg);
+    background-color: var(--green-hover);
 }
 
+/* Submenu (inicialmente oculto) */
+.sidebar ul .submenu {
+    margin-left: 15px;
+    display: none;
+    margin-top: 10px;
+}
+
+.sidebar ul .submenu li {
+    font-size: 0.95rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 0;
+}
+
+/* === Conteúdo Principal === */
 .content {
     margin-left: 270px;
-    padding: 20px;
+    padding: 30px;
     width: 100%;
+    box-sizing: border-box;
 }
 
+/* === Cartões === */
 .card {
-    background: var(--card-bg);
+    background-color: var(--card-light);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-}
-
-.btn {
-    background: var(--button-bg);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
     transition: 0.3s;
 }
 
-.btn:hover {
-    background: var(--button-hover-bg);
+.card h3 {
+    color: var(--green-dark);
+    margin-bottom: 20px;
 }
 
-input, select {
+/* === Formulários === */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-dark);
+    display: block;
+}
+
+input, select, textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--input-border);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 14px;
     outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
 }
 
-input:focus, select:focus {
-    border: 1px solid var(--input-focus-border);
+input:focus, select:focus, textarea:focus {
+    border-color: var(--green-dark);
+    box-shadow: 0 0 5px rgba(44, 120, 108, 0.5);
+}
+
+/* === Botões === */
+.btn, button {
+    background-color: var(--green-dark);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin-right: 10px;
+}
+
+.btn:hover, button:hover {
+    background-color: var(--green-hover);
+}
+
+/* === Tabelas === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+table th, table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--green-dark);
+    color: white;
+}
+
+table tr:hover {
+    background-color: rgba(44, 120, 108, 0.05);
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 210px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
 }

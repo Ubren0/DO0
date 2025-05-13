@@ -1,0 +1,93 @@
+.card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: #2e7d32;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+}
+
+button {
+    background: #2C786C;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+table th, table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table td button {
+    margin-right: 4px;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+table td button:hover {
+    background-color: #ccc;
+}
+/* Submenus dentro da barra lateral */
+.sidebar ul .submenu {
+    margin-left: 15px; /* Espaçamento à esquerda para submenus */
+    display: none; /* Esconde os submenus por padrão */
+    margin-top: 10px; /* Espaçamento superior dos submenus */
+}
+
+.sidebar ul .submenu li {
+    font-size: 0.95rem; /* Tamanho da fonte dos itens do submenu */
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo clara para itens do submenu */
+    margin: 5px 0; /* Espaçamento entre os itens do submenu */
+}
+
+.sidebar ul .submenu li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo mais clara ao passar o mouse */
+}

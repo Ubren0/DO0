@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <!-- Definindo o ícone do site -->
     <link rel="icon" type="image/x-icon" href="../IMG/logo.ico">
@@ -9,6 +10,7 @@
     <!-- Link para o CSS da página -->
     <link rel="stylesheet" href="../CSS/Servico.css">
 </head>
+
 <body>
     <!-- Sidebar do sistema -->
     <div class="sidebar">
@@ -24,6 +26,7 @@
             </li>
             <ul class="submenu" id="submenu">
                 <li onclick="window.location.href='usuarios.html'">👤 Usuários</li>
+                <li onclick="window.location.href='confservico.html'">🛠️Configuração De Serviços</li>
             </ul>
             <ul>
                 <li onclick="logout()">🚪 Sair</li>
@@ -39,7 +42,9 @@
         <form id="agendamentoForm">
             <!-- Campo para pesquisa de cliente -->
             <label for="pesquisaCliente">Pesquisar Cliente:</label>
-            <input type="text" id="pesquisaCliente" placeholder="Digite o nome ou CNPJ/CPF do cliente" oninput="pesquisarCliente()">
+            <input type="text" id="pesquisaCliente" placeholder="Digite o ID, nome ou CNPJ/CPF do cliente">
+            <button type="button" onclick="pesquisarCliente()">🔍 Buscar</button>
+
 
             <!-- Exibição das informações do cliente -->
             <div id="clienteInfo">
@@ -52,10 +57,14 @@
             <!-- Seleção do serviço -->
             <label for="servico">Selecione o Serviço:</label>
             <select id="servico">
-                <option value="desratizacao">Desratização</option>
-                <option value="dedetizacao">Dedetização</option>
-                <option value="desinsetizacao">Desinsetização</option>
+                <option value="desinfeccao">Desinfecção de Ambientes (fungos, bactérias e vírus)</option>
+                <option value="dedetizacao">Dedetização Geral (baratas, formigas, traças, etc.)</option>
+                <option value="percevejos">Combate a Percevejos de Cama</option>
+                <option value="ratos">Controle de Ratos</option>
+                <option value="mosquitos">Controle de Mosquitos e Moscas</option>
+                <option value="servico_personalizado">Serviço Personalizado para Empresas, Indústrias e Portos</option>
             </select>
+
 
             <!-- Seleção da data do agendamento -->
             <label for="dataAgendamento">Data do Agendamento:</label>
@@ -77,4 +86,5 @@
     <!-- Link para o script JavaScript -->
     <script src="../JS/servico.js"></script>
 </body>
+
 </html>
